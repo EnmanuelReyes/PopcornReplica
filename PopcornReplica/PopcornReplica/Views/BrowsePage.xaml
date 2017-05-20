@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" prism:ViewModelLocator.AutowireViewModel="True" x:Class="PopcornReplica.Views.BrowsePage" Title="BROWSE">
+	<ContentPage.Content>
+		<StackLayout HorizontalOptions="Center" 
+		VerticalOptions="Center"
+		Margin="10,50,10,10">
+			<Label Text="Browse" Font="Large" TextColor="#C6005E" HorizontalOptions="Center" VerticalOptions="Center" />
+			<Label Text="{Binding Text}" />
+			<ListView x:Name="lstCustomers" ItemsSource="{Binding AllModels}" HasUnevenRows="True">
+				<ListView.Behaviors>
+					<b:EventToCommandBehavior Command="{Binding ViewCategoryCommand}" EventName="ItemTapped" 
+						EventArgsParameterPath="Item"/>
+				</ListView.Behaviors>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<Label Text="{Binding Id}" />
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

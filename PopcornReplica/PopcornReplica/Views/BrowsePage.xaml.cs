@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace PopcornReplica.Views
 {
-	public partial class MainPage : ContentPage
-    {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class BrowsePage : ContentPage
+	{
+		public BrowsePage()
+		{
+			InitializeComponent();
+		}
+	}
 }
