@@ -1,6 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
-             x:Class="PopcornReplica.App">
+<?xml version="1.0" encoding="utf-8"?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" x:Class="PopcornReplica.App">
+	<prism:PrismApplication.Resources>
+		<ResourceDictionary>
+			<Color x:Key="backgroundColor">#14034B</Color>
+			<Color x:Key="textColor">#C6005E</Color>
+			<Color x:Key="Pink">#C6005E</Color>
+			<Style x:Key="PageStyle" TargetType="ContentPage">
+				<Setter Property="BackgroundColor" Value="#14034B" />
+			</Style>
+		</ResourceDictionary>
+	</prism:PrismApplication.Resources>
 </prism:PrismApplication>
