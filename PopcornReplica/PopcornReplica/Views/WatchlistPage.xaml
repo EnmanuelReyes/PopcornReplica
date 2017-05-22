@@ -7,16 +7,15 @@
 	Title="WATCHLIST">
 	<ContentPage.Content>
 		<StackLayout Margin="10,50,10,10">
-		<Label Text="Watchlist" Font="Bold,Large"  
-			TextColor="#C6005E" HorizontalOptions="Center" />
-		
-		<ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-<StackLayout x:Name="View"
-		Margin="10,50,10,10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-			</StackLayout>
-		</ScrollView>
+			<Label Text="Watchlist" Font="Bold,Large" TextColor="#C6005E" HorizontalOptions="Center" />
+			<ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<StackLayout x:Name="View" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				</StackLayout>
+			</ScrollView>
+			<ScrollView Orientation="Vertical" VerticalOptions="CenterAndExpand">
+				<StackLayout x:Name="ScrollView" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+				</StackLayout>
+			</ScrollView>
 		</StackLayout>
-			
-
 	</ContentPage.Content>
 </ContentPage>

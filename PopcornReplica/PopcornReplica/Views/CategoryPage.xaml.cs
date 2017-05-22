@@ -20,7 +20,7 @@ namespace PopcornReplica.Views
 			var viewModel = this.BindingContext as CategoryPageViewModel;
 			this.ScrollView.Children.Add(viewModel.Grid);
 
-					}
+		}
 
 
 	}
