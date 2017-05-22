@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:PopcornReplica;assembly=PopcornReplica"
+	xmlns:views="clr-namespace:PopcornReplica.Views;assembly=PopcornReplica"
+	x:Class="PopcornReplica.MasterPage">
+	<TabbedPage.Children>
+		<NavigationPage Title="HOME" Icon="schedule.png">
+			<x:Arguments>
+				<views:HomePage />
+			</x:Arguments>
+		</NavigationPage>
+		<NavigationPage Title="BROWSE" Icon="schedule.png">
+			<x:Arguments>
+				<views:BrowsePage />
+			</x:Arguments>
+		</NavigationPage>
+		<NavigationPage Title="WATCHLIST" Icon="schedule.png">
+			<x:Arguments>
+				<views:WatchlistPage />
+			</x:Arguments>
+		</NavigationPage>
+	</TabbedPage.Children>
+</TabbedPage>
