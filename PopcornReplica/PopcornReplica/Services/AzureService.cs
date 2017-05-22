@@ -9,6 +9,7 @@ namespace PopcornReplica.Services
 	{
 
 		public List<Category> Categories { get; set; }
+
 		public AzureService()
 		{
 			Categories = new List<Category> {
@@ -32,13 +33,21 @@ namespace PopcornReplica.Services
 				new Category() { Name = "Western"}
 			};
 
+			foreach(var x in Categories) {
+				List<Movie> movies = new List<Movie>();
+				for (var i = 0; i < 10; i++) {
+					Movie m = new Movie { Name = "Pelicula " + i };
+					movies.Add(m);
+				}
+				x.Movies = movies;
+			}
+
 		}
 
 		public async Task<List<Category>> GetCategories()
 		{
 			return Categories;
 		}
-
 
 	}
 }
