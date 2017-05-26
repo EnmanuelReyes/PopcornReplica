@@ -4,10 +4,9 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="PopcornReplica.Views.WatchlistPage" 
-	Title="WATCHLIST">
+	Title="Watchlist">
 	<ContentPage.Content>
 		<StackLayout Margin="10,50,10,10">
-			<Label Text="Watchlist" Font="Bold,Large" TextColor="#C6005E" HorizontalOptions="Center" />
 			<ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 				<StackLayout x:Name="View" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 				</StackLayout>

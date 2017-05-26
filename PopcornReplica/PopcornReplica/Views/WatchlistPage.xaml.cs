@@ -27,8 +27,8 @@ namespace PopcornReplica.Views
 					Margin = new Thickness { Right = 10 },
 					Text = x.Name,
 					BindingContext = x,
-					TextColor = Color.Black
-					//TextColor = Color.White,
+					//TextColor = Color.Black
+					TextColor = Color.White
 				};
 				label.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnLabelClicked(view)));
 
@@ -52,8 +52,8 @@ namespace PopcornReplica.Views
 			foreach (var x in View.Children)
 			{
 
-				//((Label)x).TextColor = Color.White;
-				((Label)x).TextColor = Color.Black;
+				((Label)x).TextColor = Color.White;
+				//((Label)x).TextColor = Color.Black;
 
 			}
 		}
