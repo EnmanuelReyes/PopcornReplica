@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using PopcornReplica.Services;
+using PopcornReplica.ViewModels;
 using Xamarin.Forms;
 
 namespace PopcornReplica.Views
@@ -10,38 +11,68 @@ namespace PopcornReplica.Views
 		public HomePage()
 		{
 			InitializeComponent();
-			CardStackView cardStack = new CardStackView();
-			cardStack.SetBinding(CardStackView.ItemsSourceProperty, "ItemsList");
-			cardStack.SwipedLeft += SwipedLeft;
-			cardStack.SwipedRight += SwipedRight;
+			CreateGrid();
 
-			view.Children.Add(cardStack,
-				Constraint.Constant(30),
-				Constraint.Constant(60),
-				Constraint.RelativeToParent((parent) =>
-				{
-					return parent.Width - 60;
-				}),
-				Constraint.RelativeToParent((parent) =>
-				{
-					return parent.Height - 140;
-				})
-			);
+		}
 
-			this.LayoutChanged += (object sender, EventArgs e) =>
+		async void CreateGrid()
+		{
+			AzureService az = new AzureService();
+			var list = await az.GetTops();
+			var size = list.Count;
+			var grid = new Grid();
+			for (var i = 1; i <= size; i++)
 			{
-				cardStack.CardMoveDistance = (int)(this.Width * 0.60f);
-			};
+				grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(0.1, GridUnitType.Auto) });
+			}
+			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+
+			var j = 0;
+			for (var i = 1; i < size;)
+			{
+
+				var x = list[i];
+				var catx = new TopView(x);
+
+				catx.GestureRecognizers.Add(new TapGestureRecognizer((categoryView) => OnCategoryClicked(categoryView)));
+
+				if (i % 3 == 0)
+				{
+					GridExtension.AddChild(grid, catx, j, 0, 1, 2);
+
+					i++;
+					j++;
+					continue;
+				}
+				else
+				{
+					grid.Children.Add(catx, 0, j);
+
+				}
+
+				if (size > i)
+				{
+					var y = list[i + 1];
+					var caty = new TopView(y);
+					grid.Children.Add(caty, 1, j);
+					caty.GestureRecognizers.Add(new TapGestureRecognizer((categoryView) => OnCategoryClicked(categoryView)));
+
+				}
+
+				i += 2;
+				j++;
+			}
+			this.ScrollView.Children.Add(grid);
 		}
 
-		void SwipedLeft(int index)
+		void OnCategoryClicked(View categoryView)
 		{
-			System.Diagnostics.Debug.WriteLine("Swiped Left " + index);
+			var top = ((TopView)categoryView).Top;
+			var viewModel = this.BindingContext as HomePageViewModel;
+			viewModel.ViewTop(top);
 		}
 
-		void SwipedRight(int index)
-		{
-			System.Diagnostics.Debug.WriteLine("Swiped Right " + index);
-		}
 	}
 }

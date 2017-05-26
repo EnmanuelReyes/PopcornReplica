@@ -5,17 +5,19 @@
 	xmlns:local="clr-namespace:PopcornReplica;assembly=PopcornReplica"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="PopcornReplica.Views.HomePage"
-	Title="HOME">
-	<ContentPage.Content>
-<!--		<StackLayout HorizontalOptions="Center" 
-		VerticalOptions="Center"
+	Title="Popcorn">
+<ContentPage.Content>
+		<StackLayout 
 		Margin="10,50,10,10">
-				<Label Text="Klk 2"></Label>
-			
-			</StackLayout>-->
 
-		<RelativeLayout x:Name="view">
 
-		</RelativeLayout>
+			<ScrollView  Orientation="Vertical" VerticalOptions="CenterAndExpand">
+				<StackLayout x:Name="ScrollView" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+			</StackLayout>
+
+			</ScrollView>
+		</StackLayout>
+
+
 	</ContentPage.Content>
 </ContentPage>

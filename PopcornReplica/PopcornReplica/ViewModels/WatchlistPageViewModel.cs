@@ -9,10 +9,13 @@ namespace PopcornReplica.ViewModels
 	{
 		public readonly INavigationService navService;
 
+		public WatchlistPageViewModel()
+		{
+
+		}
 		public WatchlistPageViewModel(INavigationService navigationService)
 		{
 			navService = navigationService;
-
 		}
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
@@ -33,7 +36,7 @@ namespace PopcornReplica.ViewModels
 			NavigationParameters navParams = new NavigationParameters();
 			navParams.Add("movie", movie);
 			navService.NavigateAsync("MoviePage", navParams);
-				
+
 		}
 	}
 }
