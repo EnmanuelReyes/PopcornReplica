@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using PopcornReplica.Models;
 using Xamarin.Forms;
 
 namespace PopcornReplica
 {
 	public class CardStackView : ContentView
 	{
-		public class Item
-		{
-			public string Name { get; set; }
-			public string Photo { get; set; }
-			public string Location { get; set; }
-			public string Description { get; set; }
-		};
 
 
 		// back card scale
@@ -48,11 +42,11 @@ namespace PopcornReplica
 			BindableProperty.Create(nameof(ItemsSource), typeof(System.Collections.IList), typeof(CardStackView), null,
 			propertyChanged: OnItemsSourcePropertyChanged);
 
-		public List<Item> ItemsSource
+		public List<Movie> ItemsSource
 		{
 			get
 			{
-				return (List<Item>)GetValue(ItemsSourceProperty);
+				return (List<Movie>)GetValue(ItemsSourceProperty);
 			}
 			set
 			{
@@ -93,7 +87,7 @@ namespace PopcornReplica
 				);
 			}
 
-			this.BackgroundColor = Color.Black;
+			this.BackgroundColor = Color.White;
 			this.Content = view;
 
 			var panGesture = new PanGestureRecognizer();
@@ -112,9 +106,9 @@ namespace PopcornReplica
 				if (itemIndex >= ItemsSource.Count) break;
 				var card = cards[i];
 				card.Name.Text = ItemsSource[itemIndex].Name;
-				card.Location.Text = ItemsSource[itemIndex].Location;
-				card.Description.Text = ItemsSource[itemIndex].Description;
-				card.Photo.Source = ImageSource.FromFile(ItemsSource[itemIndex].Photo);
+				card.Location.Text = "Default";
+				card.Description.Text = "Default";
+				card.Photo.Source = ImageSource.FromFile(ItemsSource[itemIndex].Photo != null ? "none" : "ups");
 				card.IsVisible = true;
 				card.Scale = GetScale(i);
 				card.RotateTo(0, 0);
@@ -133,6 +127,7 @@ namespace PopcornReplica
 					break;
 				case GestureStatus.Running:
 					HandleTouch((float)e.TotalX);
+					HandleTouchY((float)e.TotalY);
 					break;
 				case GestureStatus.Completed:
 					HandleTouchEnd();
@@ -144,6 +139,22 @@ namespace PopcornReplica
 		public void HandleTouchStart()
 		{
 			cardDistance = 0;
+		}
+		public void HandleTouchY(float diff_y)
+		{
+
+			if (ignoreTouch)
+			{
+				return;
+			}
+			var topCard = cards[topCardIndex];
+
+			// move the top card
+			if (topCard.IsVisible)
+			{
+
+				topCard.TranslationY = (diff_y);
+			}
 		}
 
 		// to handle te ongoing touch event as the card is moved
@@ -250,8 +261,8 @@ namespace PopcornReplica
 
 				// set the data
 				topCard.Name.Text = ItemsSource[itemIndex].Name;
-				topCard.Location.Text = ItemsSource[itemIndex].Location;
-				topCard.Description.Text = ItemsSource[itemIndex].Description;
+				topCard.Location.Text = "Default";
+				topCard.Description.Text = "Default";
 				topCard.Photo.Source = ImageSource.FromFile(ItemsSource[itemIndex].Photo);
 
 				topCard.IsVisible = true;

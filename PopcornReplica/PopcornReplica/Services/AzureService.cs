@@ -9,6 +9,7 @@ namespace PopcornReplica.Services
 	{
 
 		public List<Category> Categories { get; set; }
+		public List<Top> Tops { get; set; }
 
 		public AzureService()
 		{
@@ -33,9 +34,31 @@ namespace PopcornReplica.Services
 				new Category() { Name = "Western"}
 			};
 
-			foreach(var x in Categories) {
+			Tops = new List<Top> {
+				new Top() { Name = "Action"},
+				new Top() { Name = "Adventure"},
+				new Top() { Name = "Animation"},
+				new Top() { Name = "Comedy"},
+				new Top() { Name = "Crime"},
+				new Top() { Name = "Documentary"}
+			};
+
+			foreach (var x in Tops)
+			{
 				List<Movie> movies = new List<Movie>();
-				for (var i = 0; i < 10; i++) {
+				for (var i = 0; i < 10; i++)
+				{
+					Movie m = new Movie { Name = "Pelicula " + i };
+					movies.Add(m);
+				}
+				x.Movies = movies;
+			}
+
+			foreach (var x in Categories)
+			{
+				List<Movie> movies = new List<Movie>();
+				for (var i = 0; i < 10; i++)
+				{
 					Movie m = new Movie { Name = "Pelicula " + i };
 					movies.Add(m);
 				}
@@ -47,6 +70,10 @@ namespace PopcornReplica.Services
 		public async Task<List<Category>> GetCategories()
 		{
 			return Categories;
+		}
+		public async Task<List<Top>> GetTops()
+		{
+			return Tops;
 		}
 
 	}

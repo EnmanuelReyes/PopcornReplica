@@ -2,23 +2,23 @@
 using PopcornReplica.Models;
 using Xamarin.Forms;
 
-namespace PopcornReplica
+namespace PopcornReplica.Views
 {
-	public class CategoryView : ContentView
+	public class TopView : ContentView
 	{
-		public Category Category { get; set; }
+		public Top Top { get; set; }
 
-		public CategoryView()
+		public TopView()
 		{
 			Content = new Label { Text = "Hello ContentView" };
 
 		}
-		public CategoryView(Category category)
+		public TopView(Top top)
 		{
-			this.Category = category;
+			this.Top = top;
 			var myLabel = new Label()
 			{
-				Text = category.Name,
+				Text = top.Name,
 				Font = Font.SystemFontOfSize(20, FontAttributes.Bold),
 				TextColor = Color.Black,
 				HorizontalTextAlignment = TextAlignment.Center,
