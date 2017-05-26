@@ -5,19 +5,22 @@
 	xmlns:views="clr-namespace:PopcornReplica.Views;assembly=PopcornReplica"
 	x:Class="PopcornReplica.MasterPage">
 	<TabbedPage.Children>
-		<NavigationPage Title="HOME" Icon="schedule.png">
+		<NavigationPage Title="HOME" Icon="schedule.png" BarBackgroundColor="{StaticResource BackgroundColor}"
+			BarTextColor="{StaticResource Pink}">
 			<x:Arguments>
-				<views:HomePage />
+				<views:HomePage Style="{StaticResource PageStyle}" />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="BROWSE" Icon="schedule.png">
+		<NavigationPage Title="BROWSE" Icon="schedule.png" BarBackgroundColor="{StaticResource BackgroundColor}"
+			BarTextColor="{StaticResource Pink}">
 			<x:Arguments>
-				<views:BrowsePage />
+				<views:BrowsePage Style="{StaticResource PageStyle}" />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="WATCHLIST" Icon="schedule.png">
+		<NavigationPage Title="WATCHLIST" Icon="schedule.png" BarBackgroundColor="{StaticResource BackgroundColor}" 
+			BarTextColor="{StaticResource Pink}">
 			<x:Arguments>
-				<views:WatchlistPage />
+				<views:WatchlistPage Style="{StaticResource PageStyle}" />
 			</x:Arguments>
 		</NavigationPage>
 	</TabbedPage.Children>

@@ -15,7 +15,7 @@ namespace PopcornReplica.Views
 			CreateGrid();
 		}
 
-		async void CreateGrid()
+		void CreateGrid()
 		{
 			var viewModel = this.BindingContext as CategoryPageViewModel;
 			this.ScrollView.Children.Add(viewModel.Grid);

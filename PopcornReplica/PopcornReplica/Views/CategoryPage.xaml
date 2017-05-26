@@ -4,7 +4,8 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
 	xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
 	prism:ViewModelLocator.AutowireViewModel="True" 
-	x:Class="PopcornReplica.Views.CategoryPage">
+	x:Class="PopcornReplica.Views.CategoryPage"
+	Title="{Binding Category.Name}">
 	<ContentPage.Content>
 		<StackLayout 
 		Margin="10,50,10,10">

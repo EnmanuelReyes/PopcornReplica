@@ -5,12 +5,10 @@
 	xmlns:local="clr-namespace:PopcornReplica;assembly=PopcornReplica" 
 	xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
 	prism:ViewModelLocator.AutowireViewModel="True" 
-	x:Class="PopcornReplica.Views.BrowsePage" Title="BROWSE" x:Name="BrowsePage">
+	x:Class="PopcornReplica.Views.BrowsePage" Title="Browse" x:Name="BrowsePage">
 	<ContentPage.Content>
 		<StackLayout 
 		Margin="10,50,10,10">
-
-
 			<ScrollView  Orientation="Vertical" VerticalOptions="CenterAndExpand">
 				<StackLayout x:Name="ScrollView" Orientation="Vertical" VerticalOptions="CenterAndExpand">
 			</StackLayout>

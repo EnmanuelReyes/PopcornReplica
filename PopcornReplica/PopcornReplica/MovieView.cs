@@ -24,7 +24,7 @@ namespace PopcornReplica
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalTextAlignment = TextAlignment.End,
 			};
-			var embeddedImage = new Image { Aspect = Aspect.AspectFit };
+			var embeddedImage = new Image { Aspect = Aspect.AspectFill };
 			embeddedImage.Source = ImageSource.FromResource("PopcornReplica.beach.jpg");
 
 

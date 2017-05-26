@@ -22,9 +22,11 @@ namespace PopcornReplica
 			Container.RegisterTypeForNavigation<MainPage>();
 			Container.RegisterTypeForNavigation<BrowsePage>();
 			Container.RegisterTypeForNavigation<HomePage>();
+			Container.RegisterTypeForNavigation<WatchlistPage>();
 			Container.RegisterTypeForNavigation<MasterPage>();
 			Container.RegisterTypeForNavigation<CategoryPage>();
 			Container.RegisterTypeForNavigation<MoviePage>();
+			Container.RegisterTypeForNavigation<SwipePage>();
 		}
 	}
 }
