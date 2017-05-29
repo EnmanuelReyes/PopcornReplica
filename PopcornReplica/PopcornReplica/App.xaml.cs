@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics.Contracts;
 using Xamarin.Forms;
+using PopcornReplica.Data;
 
 namespace PopcornReplica
 {

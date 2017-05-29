@@ -43,9 +43,6 @@
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage.xaml.cs">
-      <DependentUpon>MasterPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\BrowsePage.xaml.cs">
       <DependentUpon>BrowsePage.xaml</DependentUpon>
     </Compile>
@@ -60,8 +57,6 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="ViewModels\CategoryPageViewModel.cs" />
     <Compile Include="ViewModels\MoviePageViewModel.cs" />
-    <Compile Include="CardStackView.cs" />
-    <Compile Include="CardView.cs" />
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -71,24 +66,27 @@
     </Compile>
     <Compile Include="Services\AzureService.cs" />
     <Compile Include="ViewModels\WatchlistPageViewModel.cs" />
-    <Compile Include="CategoryView.cs" />
-    <Compile Include="MovieView.cs" />
     <Compile Include="Views\SwipePage.xaml.cs">
       <DependentUpon>SwipePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Top.cs" />
-    <Compile Include="GridExtension.cs" />
     <Compile Include="ViewModels\SwipePageViewModel.cs" />
     <Compile Include="Views\TopView.cs" />
     <Compile Include="IFileHelper.cs" />
-    <Compile Include="PopcornDatabase.cs" />
+    <Compile Include="Views\RatingStars.cs" />
+    <Compile Include="Data\PopcornDatabase.cs" />
+    <Compile Include="Views\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieView.cs" />
+    <Compile Include="Util\GridExtension.cs" />
+    <Compile Include="Views\CategoryView.cs" />
+    <Compile Include="Views\CardView.cs" />
+    <Compile Include="Views\CardStackView.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BrowsePage.xaml">
@@ -108,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="beach.jpg" />
     <EmbeddedResource Include="Views\SwipePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -168,6 +169,8 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

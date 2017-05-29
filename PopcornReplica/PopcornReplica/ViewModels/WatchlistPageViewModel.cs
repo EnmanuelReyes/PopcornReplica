@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using PopcornReplica.Models;
+using PopcornReplica.Views;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;

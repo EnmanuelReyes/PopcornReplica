@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using PopcornReplica.Models;
+using PopcornReplica.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;

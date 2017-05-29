@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PopcornReplica.Views.MoviePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:PopcornReplica;assembly=PopcornReplica" 
+	xmlns:views="clr-namespace:PopcornReplica.Views;assembly=PopcornReplica" 
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	BackgroundColor="Black"
+	x:Class="PopcornReplica.Views.MoviePage">
 	<ContentPage.Content>
 		<StackLayout HorizontalOptions="Center" 
 		VerticalOptions="Center"
 		Margin="10,50,10,10">
-			<Label Text="{Binding Movie.Name}" Font="Large" TextColor="#C6005E" HorizontalOptions="Center" VerticalOptions="Center" />
+			<Label Text="{Binding Movie.Name}" Font="Large" TextColor="White" VerticalOptions="Center" />
+			<views:RatingStars Rating="{Binding Movie.Rating}"  />
+			<Label Text="{Binding Movie.Description}" Font="Small" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
 	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

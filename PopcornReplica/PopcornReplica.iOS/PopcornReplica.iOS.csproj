@@ -118,6 +118,12 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\schedule.png" />
     <BundleResource Include="Resources\schedule%402x.png" />
+    <BundleResource Include="Resources\rating_star_half.png" />
+    <BundleResource Include="Resources\rating_star_half%402x.png" />
+    <BundleResource Include="Resources\rating_star_off.png" />
+    <BundleResource Include="Resources\rating_star_off%402x.png" />
+    <BundleResource Include="Resources\rating_star_on.png" />
+    <BundleResource Include="Resources\rating_star_on%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

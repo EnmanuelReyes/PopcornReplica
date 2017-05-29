@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using PopcornReplica.Models;
 using SQLite;
 
-namespace PopcornReplica
+namespace PopcornReplica.Data
 {
 	public class PopcornDatabase
 	{

@@ -4,7 +4,7 @@ using System.Windows.Input;
 using PopcornReplica.Models;
 using Xamarin.Forms;
 
-namespace PopcornReplica
+namespace PopcornReplica.Views
 {
 	public class CardStackView : ContentView
 	{

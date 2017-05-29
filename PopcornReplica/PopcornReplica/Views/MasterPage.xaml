@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:PopcornReplica;assembly=PopcornReplica"
 	xmlns:views="clr-namespace:PopcornReplica.Views;assembly=PopcornReplica"
-	x:Class="PopcornReplica.MasterPage">
+	x:Class="PopcornReplica.Views.MasterPage">
 	<TabbedPage.Children>
 		<NavigationPage Title="HOME" Icon="schedule.png" BarBackgroundColor="{StaticResource BackgroundColor}"
 			BarTextColor="{StaticResource Pink}">

@@ -2,7 +2,7 @@
 using PopcornReplica.Models;
 using Xamarin.Forms;
 
-namespace PopcornReplica
+namespace PopcornReplica.Views
 {
 	public class MovieView : ContentView
 	{

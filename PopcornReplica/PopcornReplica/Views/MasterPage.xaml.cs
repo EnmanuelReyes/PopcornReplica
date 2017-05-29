@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace PopcornReplica
+namespace PopcornReplica.Views
 {
 	public partial class MasterPage : TabbedPage
 	{

@@ -9,7 +9,9 @@ namespace PopcornReplica.Models
 		[PrimaryKey]
 		public int Id { get; set; }
 		public string Name { get; set; }
+		public string Description { get; set; }
 		public string Photo { get; set; }
+		public byte Rating { get; set; }
 		public int Year { get; set; }
 		public int CategoryId { get; set; }
 

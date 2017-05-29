@@ -48,7 +48,7 @@ namespace PopcornReplica.Services
 				List<Movie> movies = new List<Movie>();
 				for (var i = 0; i < 10; i++)
 				{
-					Movie m = new Movie { Name = "Pelicula " + i, Id = i+1, CategoryId = 1 };
+					Movie m = new Movie { Name = "Movie " + i, Id = i + 1, CategoryId = 1, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse" };
 					movies.Add(m);
 				}
 				x.Movies = movies;
@@ -59,7 +59,7 @@ namespace PopcornReplica.Services
 				List<Movie> movies = new List<Movie>();
 				for (var i = 0; i < 10; i++)
 				{
-					Movie m = new Movie { Name = "Pelicula " + i, Id = i+1, CategoryId = 1 };
+					Movie m = new Movie { Name = "Movie " + i, Id = i + 1, Rating = 9, CategoryId = 1, Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." };
 					movies.Add(m);
 				}
 				x.Movies = movies;

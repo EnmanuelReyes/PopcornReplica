@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace PopcornReplica
+namespace PopcornReplica.Views
 {
 	public class CardView : ContentView
 	{
