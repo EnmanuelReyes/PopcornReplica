@@ -68,5 +68,25 @@ namespace PopcornReplica.ViewModels
 
 		}
 
-}
+		public async void AddToWatchlist(int index)
+		{
+			//foreach (var x in await App.Database.GetMoviesAsync()) {
+			//	await App.Database.DeleteMovieAsync(x);
+			//}
+			var movie = ItemsList[index - 2];
+			try
+			{
+				await App.Database.SaveMovieAsync(movie);
+			}
+			catch (Exception e)
+			{
+
+			}
+			System.Diagnostics.Debug.WriteLine("Movie liked");
+			var list = await App.Database.GetMoviesAsync();
+
+
+		}
+
+	}
 }

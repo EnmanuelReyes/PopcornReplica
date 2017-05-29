@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using PopcornReplica.ViewModels;
 using Xamarin.Forms;
 
 namespace PopcornReplica.Views
@@ -42,6 +42,8 @@ namespace PopcornReplica.Views
 
 		void SwipedRight(int index)
 		{
+			var viewModel = this.BindingContext as SwipePageViewModel;
+			viewModel.AddToWatchlist(index);
 			System.Diagnostics.Debug.WriteLine("Swiped Right " + index);
 		}
 	}

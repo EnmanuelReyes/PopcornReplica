@@ -14,8 +14,8 @@ namespace PopcornReplica.Services
 		public AzureService()
 		{
 			Categories = new List<Category> {
-				new Category() { Name = "Action"},
-				new Category() { Name = "Adventure"},
+				new Category() { Name = "Action", Id = 1},
+				new Category() { Name = "Adventure",Id = 2},
 				new Category() { Name = "Animation"},
 				new Category() { Name = "Comedy"},
 				new Category() { Name = "Crime"},
@@ -48,7 +48,7 @@ namespace PopcornReplica.Services
 				List<Movie> movies = new List<Movie>();
 				for (var i = 0; i < 10; i++)
 				{
-					Movie m = new Movie { Name = "Pelicula " + i };
+					Movie m = new Movie { Name = "Pelicula " + i, Id = i+1, CategoryId = 1 };
 					movies.Add(m);
 				}
 				x.Movies = movies;
@@ -59,7 +59,7 @@ namespace PopcornReplica.Services
 				List<Movie> movies = new List<Movie>();
 				for (var i = 0; i < 10; i++)
 				{
-					Movie m = new Movie { Name = "Pelicula " + i };
+					Movie m = new Movie { Name = "Pelicula " + i, Id = i+1, CategoryId = 1 };
 					movies.Add(m);
 				}
 				x.Movies = movies;

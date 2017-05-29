@@ -15,6 +15,7 @@ namespace PopcornReplica.Views
 		{
 			InitializeComponent();
 			LoadCategories();
+			createGrid();
 		}
 
 		public async void LoadCategories()
@@ -40,10 +41,11 @@ namespace PopcornReplica.Views
 		void OnLabelClicked(View view)
 		{
 			Category = (PopcornReplica.Models.Category)view.BindingContext;
+			var bindingContext = BindingContext as WatchlistPageViewModel;
+			bindingContext.InitializeGrid(Category);
 			System.Diagnostics.Debug.WriteLine("clickeo label");
 			AllWhite();
 			((Label)view).TextColor = (Color)Application.Current.Resources["Pink"];
-			createGrid();
 
 		}
 
@@ -60,35 +62,8 @@ namespace PopcornReplica.Views
 
 		public void createGrid()
 		{
-			var list = Category.Movies;
-			var size = list.Count;
-			var grid = new Grid();
-			for (var i = 0; i < size / 2; i++)
-			{
-				grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(0.1, GridUnitType.Auto) });
-			}
-			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-
-
-			var j = 0;
-			for (var i = 0; i < size; i += 2)
-			{
-				var x = list[i];
-				//var catx = new Label { Text = x.Name };
-				var catx = new MovieView(x);
-				var y = list[i + 1];
-				//var caty = new Label { Text = y.Name };
-				var caty = new MovieView(y);
-				grid.Children.Add(catx, 0, j);
-				grid.Children.Add(caty, 1, j);
-
-				catx.GestureRecognizers.Add(new TapGestureRecognizer((movieView) => OnMovieClicked(movieView)));
-				caty.GestureRecognizers.Add(new TapGestureRecognizer((movieView) => OnMovieClicked(movieView)));
-
-				j++;
-			}
-			this.ScrollView.Children.Add(grid);
+			var bindingContext = BindingContext as WatchlistPageViewModel;
+			this.ScrollView.Children.Add(bindingContext.Grid);
 		}
 
 		void OnMovieClicked(View movieView)
