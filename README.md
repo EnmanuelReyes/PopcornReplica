@@ -3,7 +3,7 @@
 ### A Replica of the   [Popcorn](https://getpopcorn.io/) App
 -------
 
-# [Workflow](https://github.com/EnmanuelReyes/PopcornReplica/WORKFLOW.md)
+# [Workflow](WORKFLOW.md)
 
 -------
 
